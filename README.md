@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +15,21 @@
     }
 
     header {
-      background: #1a1a1a;
-      padding: 20px;
+      background: url("hero.jpg") center/cover no-repeat;
+      padding: 80px 20px;
       text-align: center;
       color: white;
     }
 
     header h1 {
       margin: 0;
-      font-size: 32px;
-      letter-spacing: 1px;
+      font-size: 40px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-size: 18px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
 
     .section {
@@ -43,6 +47,25 @@
       color: #1a1a1a;
       border-left: 6px solid #1a1a1a;
       padding-left: 10px;
+    }
+
+    .image-box {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 48%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
 
     ul {
@@ -83,9 +106,10 @@
   <p>Your trusted transportation provider in Rocky Mount, NC</p>
 </header>
 
-
 <div class="section">
   <h2>🚖 Our Services</h2>
+  <img src="services.jpg" class="image-box" alt="Transportation services image">
+
   <ul>
     <li>Local transportation</li>
     <li>Out-of-town trips</li>
@@ -95,6 +119,15 @@
   </ul>
 </div>
 
+<div class="section">
+  <h2>🚗 Our Vehicles</h2>
+  <p>Your comfort and safety are our top priority.</p>
+
+  <div class="gallery">
+    <img src="vehicle1.jpg" alt="Vehicle image 1">
+    <img src="vehicle2.jpg" alt="Vehicle image 2">
+  </div>
+</div>
 
 <div class="section">
   <h2>📞 Contact & Booking</h2>
@@ -103,12 +136,11 @@
   <a class="btn" href="tel:2529692444">📞 Call Now to Book a Ride</a>
 </div>
 
-
 <div class="section">
   <h2>📝 Booking Request Form</h2>
   <p>Submit your ride request below. We will contact you shortly.</p>
 
-  <form action="https://formsubmit.co/your@email.com" method="POST">
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
     <input type="hidden" name="_captcha" value="false">
 
     <p><strong>Your Name</strong></p>
@@ -129,7 +161,6 @@
     <button type="submit" class="btn">Submit Ride Request</button>
   </form>
 </div>
-
 
 <div class="footer">
   <p>© Traveling Star Service — All Rights Reserved</p>
