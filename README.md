@@ -14,6 +14,20 @@
       color: #222;
     }
 
+    /* LOGO */
+    .logo-box {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      background: #ffffff;
+    }
+
+    .logo-box img {
+      width: 160px;
+      border-radius: 8px;
+    }
+
+    /* HEADER */
     header {
       background: url("hero.jpg") center/cover no-repeat;
       padding: 80px 20px;
@@ -32,6 +46,7 @@
       text-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
 
+    /* SECTIONS */
     .section {
       padding: 40px 20px;
       max-width: 900px;
@@ -68,11 +83,16 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
 
-    ul {
-      padding-left: 20px;
-      line-height: 1.8;
+    /* REVIEWS */
+    .review {
+      background: #f2f2f2;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 5px solid #1a1a1a;
     }
 
+    /* BUTTON */
     .btn {
       display: block;
       width: 100%;
@@ -90,6 +110,7 @@
       background: #333;
     }
 
+    /* FOOTER */
     .footer {
       text-align: center;
       padding: 20px;
@@ -100,6 +121,11 @@
 
 </head>
 <body>
+
+<!-- LOGO -->
+<div class="logo-box">
+  <img src="logo.png" alt="Traveling Star Service Logo">
+</div>
 
 <header>
   <h1>Traveling Star Service</h1>
@@ -130,36 +156,39 @@
 </div>
 
 <div class="section">
+  <h2>⭐ Customer Reviews</h2>
+
+  <div class="review">
+    “Fast, reliable, and excellent service! Highly recommended.”  
+    <br><strong>– Maria J.</strong>
+  </div>
+
+  <div class="review">
+    “Picked me up on time for my airport trip. Very professional.”  
+    <br><strong>– David R.</strong>
+  </div>
+
+  <div class="review">
+    “Clean vehicle, friendly driver. I will book again.”  
+    <br><strong>– Jasmine P.</strong>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📍 Service Area</h2>
+  <p>We proudly serve Rocky Mount, NC and surrounding areas.</p>
+
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.27099823777!2d-77.7964!3d35.9382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ae7e8a8c9a8c27%3A0x5894651c3c5bbd7b!2sRocky%20Mount%2C%20NC!5e0!3m2!1sen!2sus!4v0000000000"
+    width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
+  </iframe>
+</div>
+
+<div class="section">
   <h2>📞 Contact & Booking</h2>
   <p><strong>Phone:</strong> 252-969-2444</p>
   <p><strong>Location:</strong> Rocky Mount, North Carolina</p>
   <a class="btn" href="tel:2529692444">📞 Call Now to Book a Ride</a>
-</div>
-
-<div class="section">
-  <h2>📝 Booking Request Form</h2>
-  <p>Submit your ride request below. We will contact you shortly.</p>
-
-  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-
-    <p><strong>Your Name</strong></p>
-    <input type="text" name="Name" required style="width:100%; padding:10px;">
-
-    <p><strong>Phone Number</strong></p>
-    <input type="text" name="Phone" required style="width:100%; padding:10px;">
-
-    <p><strong>Pick-Up Location</strong></p>
-    <input type="text" name="Pickup" required style="width:100%; padding:10px;">
-
-    <p><strong>Drop-Off Location</strong></p>
-    <input type="text" name="Dropoff" required style="width:100%; padding:10px;">
-
-    <p><strong>Date & Time</strong></p>
-    <input type="text" name="Datetime" required style="width:100%; padding:10px;">
-
-    <button type="submit" class="btn">Submit Ride Request</button>
-  </form>
 </div>
 
 <div class="footer">
