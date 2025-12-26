@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><( HEAD)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traveling Star Transport</title>
   <style>
@@ -41,5 +41,73 @@
   <footer>
     © Traveling Star Transport — Created with GitHub Pages
   </footer>
+=======
+  <title>Traveling Star POS</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-qr-code@2.0.6/lib/index.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+
+const { useState, useEffect } = React;
+const API_URL = "https://travelingstar-pos.onrender.com";
+const CASHAPP_CASHTAG = "$TravelingStarPOS"; // <-- replace with your Cashtag
+
+function App() {
+  const [products, setProducts] = useState([]);
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_URL}/products`)
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.error(err));
+
+    fetch(`${API_URL}/customers`)
+      .then(res => res.json())
+      .then(data => setCustomers(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const handleBuy = (product) => {
+    const url = `https://cash.app/${CASHAPP_CASHTAG}/${product.price}`;
+    window.open(url, "_blank");
+  };
+
+  return (
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h1>Products / Services</h1>
+      <ul>
+        {products.map(p => (
+          <li key={p.id} style={{ marginBottom: "20px" }}>
+            {p.name} — ${p.price}
+            <button onClick={() => handleBuy(p)} style={{ marginLeft: "10px" }}>
+              Buy Now
+            </button>
+            <div style={{ marginTop: "10px" }}>
+              <QRCode value={`https://cash.app/${CASHAPP_CASHTAG}/${p.price}`} size={128} />
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <h1>Customers</h1>
+      <ul>
+        {customers.map(c => (
+          <li key={c.id}>{c.name} — {c.email}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+</script>
+>>>>>>> 6e461a7 (Add Cash App Buy Now buttons + QR codes)
 </body>
 </html>
